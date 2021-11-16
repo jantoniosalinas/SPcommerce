@@ -1,0 +1,109 @@
+@hostname=http://localhost
+@port=5000
+@host={{hostname}}:{{port}}
+
+###
+GET {{host}}/products
+Content-Type: application/json
+
+###
+GET {{host}}/products/EAN1234567890
+Content-Type: application/json
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "1",
+    "sku": "EAN1234567890",
+    "product_name": "Sample One",
+    "description": "Description Sample One",
+    "image": "../images/1.jpg",
+    "price": "50.25",
+    "quantity": "5"
+}
+
+###
+PUT {{host}}/products/EAN123456789
+Content-Type: application/json
+
+{
+    "product_name": "Sample One 1",
+    "quantity": "10"
+}
+
+###
+DELETE  {{host}}/products/EAN1234567890
+Content-Type: application/json
+
+
+
+###
+POST {{host}}/products/carts
+Content-Type: application/json
+
+{
+    "idShoppingCart": "antonio.salinas@ucamp.utel.edu.mx",
+    "statusCart": 1,
+    "storage": [{ "id": "1",
+                  "sku": "KP1",
+                  "product_name": "KP1 name",
+                  "price": "10.00",
+                  "product_quantity": "3",
+                  "total_price": "30.00"
+                },
+                { "id": "2",
+                  "sku": "KP2",
+                  "product_name": "KP2 name",
+                  "price": "15.00",
+                  "product_quantity": "4",
+                  "total_price": "60.00"
+                }] 
+}
+
+
+###
+POST {{host}}/products/users
+Content-Type: application/json
+
+{
+    "id": 1,
+    "firstname": "José Antonio",
+    "lastname": "Salinas",
+    "username": "jaso",
+    "email": "antonio.salinas@ucamp.utel.edu.mx",
+    "password": "sapo",
+    "image": "",
+    "address": "Blvd Haciendas #115",
+    "city": "Puebla",
+    "state": "Puebla",
+    "zipcode": "72310",
+    "phonenumber": "2222222222",
+    "profile": "admin",
+    "usertype": "PREMIER"
+}
+
+###
+POST {{host}}/products/auth/login
+Content-Type: application/json
+
+{
+    "email": "antonio.salinas@ucamp.utel.edu.mx",
+    "password": "sapo"
+}
+
+
+###
+POST {{host}}/products/users
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThmNThhOTk3MGJiMDRmMjhiMDAyMGQiLCJpZCI6MSwiZmlyc3RuYW1lIjoiSm9zw6kgQW50b25pbyIsImxhc3RuYW1lIjoiU2FsaW5hcyIsInVzZXJuYW1lIjoiamFzbyIsImVtYWlsIjoiYW50b25pby5zYWxpbmFzQHVjYW1wLnV0ZWwuZWR1Lm14IiwiaW1hZ2UiOiIiLCJhZGRyZXNzIjoiQmx2ZCBIYWNpZW5kYXMgIzExNSIsImNpdHkiOiJQdWVibGEiLCJzdGF0ZSI6IlB1ZWJsYSIsInppcGNvZGUiOjcyMzEwLCJwaG9uZW51bWJlciI6IjIyMjIyMjIyMjIiLCJwcm9maWxlIjoiYWRtaW4iLCJ1c2VydHlwZSI6IlBSRU1JRVIiLCJzaW5jZSI6IjIwMjEtMTEtMTNUMDY6MTg6MDMuMDE1WiIsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMTNUMDY6MTg6MTcuMzAzWiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMTNUMDY6MTg6MTcuMzAzWiIsImlhdCI6MTYzNzAyOTgzNn0.e7LFg3NsZ0eS4aGJhhP_s3VET8629WBPBx-OsSHKQfc
+
+{
+    "email": "antonio.salinas@ucamp.utel.edu.mx",
+    "password": "sapo",
+    "firstname": "José Antonio",
+    "lastname": "Salinas",
+    "profile": "admin",
+    "usertype": "PREMIER"
+}
