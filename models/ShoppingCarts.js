@@ -21,7 +21,7 @@ const Cart = new Schema({
                 type: Number,
                 required: true
             },
-            product_quantity: {
+            quantity: {
                 type: Number,
                 required: true
             },

@@ -7,7 +7,11 @@ GET {{host}}/products
 Content-Type: application/json
 
 ###
-GET {{host}}/products/EAN1234567890
+GET {{host}}/products/sku/SPID2021000014
+Content-Type: application/json
+
+###
+GET {{host}}/products/search/SPbook
 Content-Type: application/json
 
 ###
@@ -16,13 +20,292 @@ Content-Type: application/json
 
 {
     "id": "1",
-    "sku": "EAN1234567890",
-    "product_name": "Sample One",
-    "description": "Description Sample One",
-    "image": "../images/1.jpg",
-    "price": "50.25",
-    "quantity": "5"
+    "sku": "SPID2021000001",
+    "product_name": "Paquete Harry Potter",
+    "description": "Paquete Box set 1a Edición",
+    "image": "SPbookPKHP.jpg",
+    "price": "2800.00",
+    "quantity": "5",
+    "category": "SPbook",
+    "review": "Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. 2. Harry Potter y la cámara secreta, el segundo volumen de la ya clásica serie de novelas fantásticas de la autora británica J.K. Rowling. 3. El desafío es enorme, pero Harry, Ron y Hermione son capaces de enfrentarse a todo esto y mucho más. 4. Tras otro abominable verano con los Dursley, Harry se dispone a iniciar el cuarto curso en Hogwarts, la famosa escuela de magia y hechicería. 5. Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más inquieto que nunca. 6. En medio de graves acontecimientos que asolan el país, Harry inicia su sexto curso en Hogwarts. El equipo de quidditch, los exámenes y las chicas lo mantienen ocupado, pero la tranquilidad dura poco. 7. La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento protector que lo mantiene a salvo.",
+    "likes": "5"
 }
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "2",
+    "sku": "SPID2021000002",
+    "product_name": "El Negociador",
+    "description": "Consejos para triunfar en la vida y en los negocios",
+    "image": "SPbookNegociador.jpg",
+    "price": "450.00",
+    "quantity": "7",
+    "category": "SPbook",
+    "review": "Me siento muy agradecido de haber tomado malas y buenas decisiones en mi camino, porque de todas esas experiencias he aprendido, y hoy mucho de lo que sé te lo comparto en estas páginas con gran emoción, «es un trabajo pero, sobre todo, con mucha humildad.» Por medio de anécdotas, frases y con el carisma que lo caracteriza, Arturo Elias Ayub, considerado por muchos el Mejor negociador de América Latina, nos cuenta su vida como empresario. Nos dice que emprender viene de la conjunción de varias premisas y que sea cual sea nuestra actividad todos podemos ser emprendedores, siempre y cuando haya una cualidad obligatoria: sentir pasión por lo que se hace. Aquí nos comparte lo que ha aprendido en los negocios y en la vida: desde sus inicios en la tienda de su padre en la calle de Correo Mayor, su paso por el futbol como presidente de los Pumas, hasta convertirse en uno de los empresarios y negociadores más reconocidos de México por su trabajo en uno de los grupos empresariales más importantes del mundo. El negociador es un libro ameno y sustancial, con consejos prácticos que te enseñarán a negociar para mejorar tu sueldo, conseguir un ascenso, resolver situaciones familiares, obtener mejores resultados con tus proveedores y clientes, entre muchas otras cosas, así como a tomar buenas decisiones en tu día a día; dos habilidades clave que, como bien dice el propio Elias Ayub, te ayudarán a lograr prácticamente todo lo que quieres en cualquier aspecto de tu vida.",
+    "likes": "3.5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "3",
+    "sku": "SPID2021000003",
+    "product_name": "El Arte de la Guerra",
+    "description": "Consejos para triunfar en la vida y en los negocios",
+    "image": "SPbookArteGuerra.jpg",
+    "price": "450.00",
+    "quantity": "8",
+    "category": "SPbook",
+    "review": "Caracterizado por su inteligencia, El arte de la guerra constituye el primer estudio conocido sobre estrategia militar y, con más de dos mil años, se lo considera uno de los más importantes tratados de su clase. Su autor, Sun Tzu, crea una verdadera obra de arte a través de sencillos y profundos aforismos.",
+    "likes": "3"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "4",
+    "sku": "SPID2021000004",
+    "product_name": "Como ser un mexicano exitoso",
+    "description": "Un sacudidor de conciencias que cambiará tu perspectiva sobre México, sobre los mexicanos y sobre ti mismo",
+    "image": "SPbook100M.jpg",
+    "price": "400.00",
+    "quantity": "10",
+    "category": "SPbook",
+    "review": "¿Somos el resultado de lo que es México ó México es el resultado de lo que somos? Cómo ser un mexicano exitoso es un estudio sobre los mexicanos y nuestra relación con el éxito Un libro de emprendimiento motivacional que proporciona las herramientas para alcanzar el éxito hecho en México Ser exitoso es ser hoy mejor que ayer y mañana mejor que hoy. La competencia es contigo mismo y si cada día superas a tu última versión jamás dejaras de crecer y el éxito se convertirá en una constante.",
+    "likes": "5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "5",
+    "sku": "SPID2021000005",
+    "product_name": "DC Comics: The Ultimate Character Guide",
+    "description": "Perfecta Introducción a los superheroes y villanos de universo DC comics",
+    "image": "SPcomicbox1.jpg",
+    "price": "700.00",
+    "quantity": "10",
+    "category": "SPcomicbox",
+    "review": "Aprende nuevas características e información acerca de tu héroe favorito como Superman y Wonder Woman... ",
+    "likes": "4"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "6",
+    "sku": "SPID2021000006",
+    "product_name": "Marvel Enciclopedia",
+    "description": "Introducción de Stan Lee",
+    "image": "SPcomicbox2.jpg",
+    "price": "900.00",
+    "quantity": "3",
+    "category": "SPcomicbox",
+    "review": "Con una introducción de Stan Lee, investigada meticulosamente e increíblemente ilustrada, esta magnífica guía del universo Marvel presenta más de 1200 personajes atemporales de Marvel comics",
+    "likes": "5"
+}
+
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "7",
+    "sku": "SPID2021000007",
+    "product_name": "Universo Marvel",
+    "description": "SuperHéroes - Villanos - Localizaciones - Tecnología - Vehículos",
+    "image": "SPcomicbox3.jpg",
+    "price": "900.00",
+    "quantity": "3",
+    "category": "SPcomicbox",
+    "review": "Con un prólogo de Roy Thomas, esta guía al universo Marvel presenta en orden cronológico a los personajes de Marvel comics, ubicaciones, vehículos y armas de la historia.",
+    "likes": "5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "8",
+    "sku": "SPID2021000008",
+    "product_name": "Marvel Studios: El diccionario visual",
+    "description": "Descubre todo lo que necesitas saber sobre el universo de Marvel",
+    "image": "SPcomicbox4.jpg",
+    "price": "900.00",
+    "quantity": "2",
+    "category": "SPcomicbox",
+    "review": "¡Únete al Capitán América, a Thor, Iron Man, la Viuda Negra y a los Guardianes de la Galaxia en un increíble viaje por el universo cinematográfico de Marvel! Una exhibición única y maravillosa de los primeros diez años de los Estudios Marvel, ¡el libro que todo fan de las películas de Marvel estaba esperando!",
+    "likes": "4"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "9",
+    "sku": "SPID2021000009",
+    "product_name": "Libro Navideño Sorpresa",
+    "description": "El regalo ideal para una tarde navideña",
+    "image": "SPsurprisebook1.jpg",
+    "price": "500.00",
+    "quantity": "2",
+    "category": "SPsurprisebook",
+    "review": "Nos gusta consentirte y acompañado de una buena cocoa con bombones, te relajaras impresionantemente y disfrutaras al máximo de tu lectura",
+    "likes": "5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "10",
+    "sku": "SPID2021000010",
+    "product_name": "Lector Explorador",
+    "description": "Encuentra el libro perfecto para descubrir al explorador que llevas dentro",
+    "image": "SPsurprisebook2.jpg",
+    "price": "700.00",
+    "quantity": "10",
+    "category": "SPsurprisebook",
+    "review": "Encuentra pistas, stickers, notas que te hagan vivir al máximo la aventura de tu lectura",
+    "likes": "5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "11",
+    "sku": "SPID2021000011",
+    "product_name": "Pequeños Aprendices",
+    "description": "Descubramos junto a los pequeños un nuevo mundo en cada lectura",
+    "image": "SPsurprisebook3.jpg",
+    "price": "700.00",
+    "quantity": "4",
+    "category": "SPsurprisebook",
+    "review": "Encuentra accesorios, actividades, stickers y plantillas que hagan divertida y única la experiencia de la lectura",
+    "likes": "4"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "12",
+    "sku": "SPID2021000012",
+    "product_name": "Lectura del amor",
+    "description": "Regala una fantasía de amor",
+    "image": "SPsurprisebook4.jpg",
+    "price": "800.00",
+    "quantity": "15",
+    "category": "SPsurprisebook",
+    "review": "Toca las fibras más sensibles de tu pareja con una lectura de romance...",
+    "likes": "4"
+}
+
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "13",
+    "sku": "SPID2021000013",
+    "product_name": "Libro Navideño Sorpresa",
+    "description": "El regalo ideal para una tarde navideña",
+    "image": "SPbookbox3.jpg",
+    "price": "500.00",
+    "quantity": "2",
+    "category": "SPbookbox",
+    "review": "Nos gusta consentirte y acompañado de una buena cocoa con bombones, te relajaras impresionantemente y disfrutaras al máximo de tu lectura",
+    "likes": "5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "14",
+    "sku": "SPID2021000014",
+    "product_name": "Lector Explorador",
+    "description": "Encuentra el libro perfecto para descubrir al explorador que llevas dentro",
+    "image": "SPbookbox2.jpg",
+    "price": "700.00",
+    "quantity": "10",
+    "category": "SPbookbox",
+    "review": "Encuentra pistas, stickers, notas que te hagan vivir al máximo la aventura de tu lectura",
+    "likes": "5"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "15",
+    "sku": "SPID2021000015",
+    "product_name": "Pequeños Aprendices",
+    "description": "Descubramos junto a los pequeños un nuevo mundo en cada lectura",
+    "image": "SPbookbox1.jpg",
+    "price": "700.00",
+    "quantity": "4",
+    "category": "SPbookbox",
+    "review": "Encuentra accesorios, actividades, stickers y plantillas que hagan divertida y única la experiencia de la lectura",
+    "likes": "4"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "16",
+    "sku": "SPID2021000016",
+    "product_name": "Lectura del amor",
+    "description": "Regala una fantasía de amor",
+    "image": "SPbookbox4.jpg",
+    "price": "800.00",
+    "quantity": "15",
+    "category": "SPbookbox",
+    "review": "Toca las fibras más sensibles de tu pareja con una lectura de romance...",
+    "likes": "4"
+}
+
+###
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "id": "2",
+    "sku": "SPID2021000002",
+    "product_name": "El Negociador",
+    "description": "Consejos para triunfar en la vida y en los negocios",
+    "image": "SPbookNegociador.jpg",
+    "price": "400.00",
+    "quantity": "7",
+    "category": "SPbookNegociador.jpg",
+    "review": "Me siento muy agradecido de haber tomado malas y buenas decisiones en mi camino, porque de todas esas experiencias he aprendido, y hoy mucho de lo que sé te lo comparto en estas páginas con gran emoción, «es un trabajo pero, sobre todo, con mucha humildad.» Por medio de anécdotas, frases y con el carisma que lo caracteriza, Arturo Elias Ayub, considerado por muchos el Mejor negociador de América Latina, nos cuenta su vida como empresario. Nos dice que emprender viene de la conjunción de varias premisas y que sea cual sea nuestra actividad todos podemos ser emprendedores, siempre y cuando haya una cualidad obligatoria: sentir pasión por lo que se hace. Aquí nos comparte lo que ha aprendido en los negocios y en la vida: desde sus inicios en la tienda de su padre en la calle de Correo Mayor, su paso por el futbol como presidente de los Pumas, hasta convertirse en uno de los empresarios y negociadores más reconocidos de México por su trabajo en uno de los grupos empresariales más importantes del mundo. El negociador es un libro ameno y sustancial, con consejos prácticos que te enseñarán a negociar para mejorar tu sueldo, conseguir un ascenso, resolver situaciones familiares, obtener mejores resultados con tus proveedores y clientes, entre muchas otras cosas, así como a tomar buenas decisiones en tu día a día; dos habilidades clave que, como bien dice el propio Elias Ayub, te ayudarán a lograr prácticamente todo lo que quieres en cualquier aspecto de tu vida.",
+    "likes": "3.5"
+}
+
+
 
 ###
 PUT {{host}}/products/EAN123456789

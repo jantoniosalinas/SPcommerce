@@ -6,7 +6,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const router = express.Router()
 const { productsDispatcher } = require('../controller')
-const { getAllProducts, 
+const { getAllProducts,
+        getProductByCategory, 
         getProductById,
         createProduct,
         updateProduct,
@@ -23,7 +24,7 @@ router.get('/', async (req, res) => {
 })
 
 // route to get a product
-router.get('/:id', async (req, res) => {
+router.get('/sku/:id', async (req, res) => {
   const { id } = req.params
   const product = await getProductById(id)
   
@@ -31,6 +32,21 @@ router.get('/:id', async (req, res) => {
     res.status(404)
     return res.send({
       message: `Product: ${id} not found`
+    })
+  }
+  
+  return res.send(product)
+})
+
+// route to get a product
+router.get('/search/:category', async (req, res) => {
+  const { category } = req.params
+  const product = await getProductByCategory(category)
+  
+  if (!product) {
+    res.status(404)
+    return res.send({
+      message: `Category: ${category} not found`
     })
   }
   
@@ -97,6 +113,7 @@ router.delete('/:id', async (req, res) => {
 // shoppingCart
 router.post('/carts', async (req, res) => {
   const body = req.body
+  //console.log(body)
 
   // ValidationError
   try {
@@ -182,6 +199,7 @@ router.post('/auth/login', async (req, res) => {
 
       res.send({
         user: user.username,
+        email: user.email,
         token
       })
 })

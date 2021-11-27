@@ -25,7 +25,6 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  image: String,
   address: String,
   city: String,
   state: String,

@@ -18,6 +18,12 @@ const productSchema = new Schema({
   image: String,
   price: Number,
   quantity: Number,
+  category: {
+    type: String,
+    required: true
+  },
+  review: String,
+  likes: Number,
   since: {
     type: Date,
     default: new Date()

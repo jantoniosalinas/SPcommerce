@@ -8,6 +8,10 @@ const getAllProducts = async () => {
   return ProductModelSchema.find({})
 }
 
+const getProductByCategory = async (category) => {
+  return ProductModelSchema.find({ category })
+}
+
 const getProductById = async (sku) => {
   return ProductModelSchema.findOne({ sku })
 }
@@ -40,7 +44,7 @@ const addShoppingCart = async (  body ) => {
                             sku: storage[i].sku,
                             product_name: storage[i].product_name,
                             price: storage[i].price,
-                            product_quantity: storage[i].product_quantity,
+                            quantity: storage[i].quantity,
                             total_price: storage[i].total_price
         })
     }
@@ -75,6 +79,7 @@ const getByEmail = async ( email ) => {
 
 module.exports = {
   getAllProducts,
+  getProductByCategory,
   getProductById,
   createProduct,
   updateProduct,
