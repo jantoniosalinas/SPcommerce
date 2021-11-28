@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 POST {{host}}/products
-Content-Type: application/json
+Content-Type: application/json0
 
 {
     "id": "1",
@@ -328,7 +328,7 @@ Content-Type: application/json
 
 {
     "idShoppingCart": "antonio.salinas@ucamp.utel.edu.mx",
-    "statusCart": 1,
+    "statusCart": "Orden",
     "storage": [{ "id": "1",
                   "sku": "KP1",
                   "product_name": "KP1 name",
@@ -344,6 +344,18 @@ Content-Type: application/json
                   "total_price": "60.00"
                 }] 
 }
+
+###
+GET {{host}}/products/getCart/antonio.salinas@ucamp.utel.edu.mx
+Content-Type: application/json
+
+###
+DELETE  {{host}}/products/deleteCart/antonio.salinas@ucamp.utel.edu.mx
+Content-Type: application/json
+
+###
+DELETE  {{host}}/products/deleteCart/61a2f50ab770208ab5d4c931
+Content-Type: application/json
 
 
 ###
@@ -366,6 +378,11 @@ Content-Type: application/json
     "profile": "admin",
     "usertype": "PREMIER"
 }
+
+###
+GET {{host}}/products/getInfo/antonio.salinas@ucamp.utel.edu.mx
+Content-Type: application/json
+
 
 ###
 POST {{host}}/products/auth/login

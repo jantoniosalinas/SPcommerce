@@ -13,7 +13,10 @@ const { getAllProducts,
         updateProduct,
         removeProduct,
         addShoppingCart,
+        getCart,
+        deleteCart,
         createUser,
+        getInfo,
         getByEmail
       } = productsDispatcher
  
@@ -143,6 +146,28 @@ router.post('/carts', async (req, res) => {
   }
 })
 
+// route to get a product
+router.get('/getCart/:email', async (req, res) => {
+  const { email } = req.params
+  const cart = await getCart(email)
+  
+  if (!cart) {
+    res.status(404)
+    return res.send({
+      message: `ShoppingCart: ${email} not found`
+    })
+  }
+  
+  return res.send(cart)
+})
+
+// route to delete a product
+router.delete('/deleteCart/:_id', async (req, res) => {
+  const { _id } = req.params
+  const result = await deleteCart(_id)
+  res.send(result)
+})
+
 // users
 router.post('/users', async (req, res) => {
   const body = req.body
@@ -176,6 +201,21 @@ router.post('/users', async (req, res) => {
 })
 
 
+// route to get Info
+router.get('/getInfo/:email', async (req, res) => {
+  const { email } = req.params
+  const info = await getInfo(email)
+  
+  if (!info) {
+    res.status(404)
+    return res.send({
+      message: `User: ${email} not found`
+    })
+  }
+  
+  return res.send(info)
+})
+
 // auth
 router.post('/auth/login', async (req, res) => {
     const { email, password }= req.body
@@ -203,7 +243,6 @@ router.post('/auth/login', async (req, res) => {
         token
       })
 })
-
 
 
 module.exports = router

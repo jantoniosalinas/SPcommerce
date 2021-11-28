@@ -3,6 +3,7 @@ const ShoppingCartModel = require('../models/ShoppingCarts')
 const userModelSchema = require('../models/Users')
 
 const bcrypt = require('bcryptjs')
+const UserModelSchema = require('../models/Users')
 // Catalog
 const getAllProducts = async () => {
   return ProductModelSchema.find({})
@@ -40,11 +41,11 @@ const addShoppingCart = async (  body ) => {
     const cartStorage = []
     for ( let i = 0; i < storage.length; i++ ) {
           cartStorage.push ({
-                            id: i+1,
+                            id: storage[i].id,
                             sku: storage[i].sku,
                             product_name: storage[i].product_name,
                             price: storage[i].price,
-                            quantity: storage[i].quantity,
+                            product_quantity: storage[i].product_quantity,
                             total_price: storage[i].total_price
         })
     }
@@ -57,6 +58,18 @@ const addShoppingCart = async (  body ) => {
     const newCart = new ShoppingCartModel(cart)
     await newCart.save()
     return newCart
+}
+
+const getCart = async (email) => {
+  return ShoppingCartModel.find({ email })
+}
+
+const deleteCart = async (id) => {
+  return ShoppingCartModel.findOneAndDelete({ id })
+}
+
+const getInfo = async (email) => {
+  return UserModelSchema.find({ email })
 }
 
 // Users
@@ -85,6 +98,9 @@ module.exports = {
   updateProduct,
   removeProduct,
   addShoppingCart,
+  getCart,
+  deleteCart,
   createUser,
+  getInfo,
   getByEmail
 }

@@ -3,7 +3,7 @@ const { Schema } = mongoose
 
 const Cart = new Schema({
     idShoppingCart: String,
-    statusCart: Number,
+    statusCart: String,
     storage: [{
             id: {
                 type: Number,
@@ -21,7 +21,7 @@ const Cart = new Schema({
                 type: Number,
                 required: true
             },
-            quantity: {
+            product_quantity: {
                 type: Number,
                 required: true
             },
