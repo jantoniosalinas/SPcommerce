@@ -171,6 +171,10 @@ En el archivo package.json dentro de la sección **"scripts"** se pueden agregar
 Para testear el server de BackEnd **products.http**
 
 
+#### Comentarios
+    El server BackEnd sigue en mejora continua, siempre buscando aplicar las mejores practicas de lo
+    aprendido en el UCAMP.
+    
 #### UCAMP - UTEL
 `UCAMP @2021`
 `José Antonio Salinas Ochoa`
