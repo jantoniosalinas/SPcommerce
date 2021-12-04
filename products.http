@@ -19,7 +19,7 @@ POST {{host}}/products
 Content-Type: application/json0
 
 {
-    "id": "1",
+    "id": "17",
     "sku": "SPID2021000001",
     "product_name": "Paquete Harry Potter",
     "description": "Paquete Box set 1a Edición",
